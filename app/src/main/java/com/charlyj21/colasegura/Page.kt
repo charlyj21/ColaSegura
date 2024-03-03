@@ -4,5 +4,7 @@ data class Page(
     val title: String,
     val image: Int,
     val desc: Int,
-    val color : String
+    val color : String,
+    val fontSize: Float?,
+    val imgMarginTop: Int?
 )
