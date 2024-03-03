@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_graph"
+    app:startDestination="@id/firstViewLinkFragment">
+
+    <fragment
+        android:id="@+id/firstViewLinkFragment"
+        android:name="com.charlyj21.colasegura.FirstViewLinkFragment"
+        android:label="fragment_first_view_link"
+        tools:layout="@layout/fragment_first_view_link" >
+        <action
+            android:id="@+id/action_firstViewLinkFragment_to_secondViewLinkFragment"
+            app:destination="@id/secondViewLinkFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/secondViewLinkFragment"
+        android:name="com.charlyj21.colasegura.SecondViewLinkFragment"
+        android:label="fragment_second_view_link"
+        tools:layout="@layout/fragment_second_view_link" >
+        <action
+            android:id="@+id/action_secondViewLinkFragment_to_homeFragment"
+            app:destination="@id/homeFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="com.charlyj21.colasegura.HomeFragment"
+        android:label="fragment_home"
+        tools:layout="@layout/fragment_home" />
+</navigation>

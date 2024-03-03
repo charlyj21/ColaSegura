@@ -27,7 +27,7 @@ class OnBoardingActivity : AppCompatActivity() {
                 }
                 pagerList.size - 1 -> {
                     skipBtn.text = "Get Started"
-                    skipBtn.gone()
+                    skipBtn.visible()
                     nextBtn.visible()
                     previousBtn.visible()
                 }
