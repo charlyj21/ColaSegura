@@ -3,11 +3,7 @@ package com.charlyj21.colasegura
 import android.content.Intent
 import android.os.Bundle
 import android.widget.Button
-import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.content.ContextCompat
-import androidx.core.view.ViewCompat
-import androidx.core.view.WindowInsetsCompat
 import androidx.recyclerview.widget.RecyclerView
 import androidx.viewpager2.widget.ViewPager2
 import com.google.android.material.tabs.TabLayout
@@ -20,19 +16,19 @@ class OnBoardingActivity : AppCompatActivity() {
             super.onPageSelected(position)
             when (position){
                 0 -> {
-                    skipBtn.text = "Skip"
+                    skipBtn.text = "Omitir"
                     skipBtn.visible()
                     nextBtn.visible()
                     previousBtn.gone()
                 }
                 pagerList.size - 1 -> {
-                    skipBtn.text = "Get Started"
+                    skipBtn.text = "Empezar"
                     skipBtn.gone()
                     nextBtn.visible()
                     previousBtn.visible()
                 }
                 else -> {
-                    skipBtn.text = "Skip"
+                    skipBtn.text = "Omitir"
                     skipBtn.visible()
                     nextBtn.visible()
                     previousBtn.visible()
