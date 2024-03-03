@@ -5,5 +5,6 @@ data class Page(
     val image: Int,
     val desc: Int,
     val color : String,
-    val fontSize: Float?
+    val fontSize: Float?,
+    val imgMarginTop: Int?
 )

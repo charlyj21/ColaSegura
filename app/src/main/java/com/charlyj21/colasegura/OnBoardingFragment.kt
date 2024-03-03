@@ -32,6 +32,13 @@ class OnBoardingFragment(val page: Page) : Fragment() {
             titleTxt.textSize = page.fontSize
         }
 
+        // Set marginTop
+        if (page.imgMarginTop != null) {
+            val params = imageView.layoutParams as ViewGroup.MarginLayoutParams
+            params.topMargin = page.imgMarginTop
+            imageView.layoutParams = params
+        }
+
         return view
     }
 }

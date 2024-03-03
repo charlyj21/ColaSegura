@@ -47,21 +47,24 @@ class OnBoardingActivity : AppCompatActivity() {
             R.drawable.ic_onboarding_1,
             R.string.onboarding_desc_1,
             "#F2D6C2",
-            50f
+            50f,
+            500
         ),
         Page(
-            "Escanea el código QR",
+            "Breve Descripción",
             R.drawable.ic_onboarding_2,
             R.string.onboarding_desc_2,
             "#F2D6C2",
-            30f
+            35f,
+            300
         ),
         Page(
-            "Ingresa a la cola",
+            "Integrantes del Equipo",
             R.drawable.ic_onboarding_3,
             R.string.onboarding_desc_3,
             "#F2D6C2",
-            40f
+            35f,
+            300
         )
     )
 
