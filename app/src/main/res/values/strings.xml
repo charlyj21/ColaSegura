@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">Cola Segura</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="onboarding_desc_1">Testing 01</string>
+    <string name="onboarding_desc_2">Testing 02</string>
+    <string name="onboarding_desc_3">Testing 03</string>
+</resources>
