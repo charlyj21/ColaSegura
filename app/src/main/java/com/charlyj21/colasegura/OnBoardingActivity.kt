@@ -46,19 +46,22 @@ class OnBoardingActivity : AppCompatActivity() {
             "Cola Segura",
             R.drawable.ic_onboarding_1,
             R.string.onboarding_desc_1,
-            "#F2D6C2"
+            "#F2D6C2",
+            50f
         ),
         Page(
             "Escanea el código QR",
             R.drawable.ic_onboarding_2,
             R.string.onboarding_desc_2,
-            "#F2D6C2"
+            "#F2D6C2",
+            30f
         ),
         Page(
             "Ingresa a la cola",
             R.drawable.ic_onboarding_3,
             R.string.onboarding_desc_3,
-            "#F2D6C2"
+            "#F2D6C2",
+            40f
         )
     )
 

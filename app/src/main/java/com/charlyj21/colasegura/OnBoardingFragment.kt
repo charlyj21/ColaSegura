@@ -27,6 +27,11 @@ class OnBoardingFragment(val page: Page) : Fragment() {
         descTxt.text = resources.getString(page.desc)
         imageView.setImageResource(page.image)
 
+        // Set font size
+        if (page.fontSize != null) {
+            titleTxt.textSize = page.fontSize
+        }
+
         return view
     }
 }
