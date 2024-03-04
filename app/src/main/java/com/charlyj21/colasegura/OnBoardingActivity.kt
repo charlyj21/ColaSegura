@@ -47,7 +47,7 @@ class OnBoardingActivity : AppCompatActivity() {
             300
         ),
         Page(
-            "Breve Descripción",
+            " Seguridad y Confianza",
             R.drawable.ic_onboarding_2,
             R.string.onboarding_desc_2,
             "#F2D6C2",
