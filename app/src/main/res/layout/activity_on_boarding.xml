@@ -17,6 +17,7 @@
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
+        android:layout_marginBottom="10dp"
         android:background="@android:color/transparent"
         app:tabGravity="center"
         app:tabIndicatorHeight="0dp"
@@ -30,6 +31,7 @@
         android:layout_alignParentTop="true"
         android:layout_alignParentEnd="true"
         android:text="Omitir"
+        android:background="@drawable/btn_model"
         android:textStyle="bold"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="16dp"/>
@@ -40,8 +42,9 @@
         android:layout_alignParentStart="true"
         android:layout_alignParentBottom="true"
         android:text="Anterior"
+        android:background="@drawable/btn_model"
         android:textStyle="bold"
-        android:layout_marginBottom="4dp"
+        android:layout_marginBottom="10dp"
         android:layout_marginStart="16dp"/>
     <Button
         android:id="@+id/nextBtn"
@@ -50,7 +53,8 @@
         android:layout_alignParentBottom="true"
         android:layout_alignParentEnd="true"
         android:text="Siguiente"
+        android:background="@drawable/btn_model"
         android:textStyle="bold"
-        android:layout_marginBottom="4dp"
+        android:layout_marginBottom="10dp"
         android:layout_marginEnd="16dp"/>
 </RelativeLayout>

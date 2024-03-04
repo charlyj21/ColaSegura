@@ -44,7 +44,7 @@ class OnBoardingActivity : AppCompatActivity() {
             R.string.onboarding_desc_1,
             "#F2D6C2",
             50f,
-            500
+            300
         ),
         Page(
             "Breve Descripción",
