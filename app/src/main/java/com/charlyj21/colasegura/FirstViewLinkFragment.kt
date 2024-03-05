@@ -101,10 +101,11 @@ class FirstViewLinkFragment : Fragment() {
     }
 
     private fun connectToBluetooth(){
-        val intent = Intent(BluetoothDevice.ACTION_PAIRING_REQUEST)
-        val bluetoothDevice = "98:D3:61:F5:C1:4A"
-        intent.putExtra(BluetoothDevice.EXTRA_DEVICE, bluetoothDevice)
-        intent.putExtra(BluetoothDevice.EXTRA_PAIRING_VARIANT, BluetoothDevice.PAIRING_VARIANT_PIN)
-        startActivityForResult(intent, 2)
+        findNavController().navigate(R.id.action_firstViewLinkFragment_to_secondViewLinkFragment)
+        //val intent = Intent(BluetoothDevice.ACTION_PAIRING_REQUEST)
+        //val bluetoothDevice = "98:D3:61:F5:C1:4A"
+        //intent.putExtra(BluetoothDevice.EXTRA_DEVICE, bluetoothDevice)
+        //intent.putExtra(BluetoothDevice.EXTRA_PAIRING_VARIANT, BluetoothDevice.PAIRING_VARIANT_PIN)
+        //startActivityForResult(intent, 2)
     }
 }
