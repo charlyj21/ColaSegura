@@ -2,7 +2,7 @@
     <string name="app_name">Cola Segura</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
-    <string name="onboarding_desc_1"> </string>
-    <string name="onboarding_desc_2">Mantén un ojo en tu mejor amigo, donde quiera que estés."</string>
-    <string name="onboarding_desc_3">Testing 03</string>
+    <string name="onboarding_desc_1">¡No pierdas de vista a tu mejor amigo! Con nuestra app de monitoreo de mascotas, podrás seguir cada movimiento de tu compañero peludo desde tu teléfono.</string>
+    <string name="onboarding_desc_2">Mantén un ojo en tu mascota, donde quiera que estés."</string>
+    <string name="onboarding_desc_3">• Delgado Jara Karla \n • Flores Herrera Carlos \n • Lastra Cierto Elizabeth \n • Pinedo Rubina Daniel \n • Quisiverde Perales Milka</string>
 </resources>

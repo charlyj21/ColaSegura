@@ -55,7 +55,7 @@ class OnBoardingActivity : AppCompatActivity() {
             300
         ),
         Page(
-            "Integrantes del Equipo",
+            "Equipo de Trabajo",
             R.drawable.ic_onboarding_3,
             R.string.onboarding_desc_3,
             "#F2D6C2",
