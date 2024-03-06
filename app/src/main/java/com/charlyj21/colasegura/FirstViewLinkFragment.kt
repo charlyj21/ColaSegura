@@ -19,11 +19,14 @@ import androidx.core.content.ContextCompat.getSystemService
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import android.Manifest
+import android.util.Log
 import androidx.core.content.ContextCompat
 
 
 class FirstViewLinkFragment : Fragment() {
     private var permissionMissing: Boolean = false
+    private val CODE_ON_BT = 1
+    private val CODE_PM_BT = 3
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -76,6 +79,25 @@ class FirstViewLinkFragment : Fragment() {
         }
     }
 
+    @Deprecated("Deprecated in Java")
+    override fun onRequestPermissionsResult(
+        requestCode: Int,
+        permissions: Array<out String>,
+        grantResults: IntArray
+    ) {
+        if (requestCode == CODE_PM_BT) {
+            if (grantResults.isNotEmpty() && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
+                // Permiso otorgado, proceder con la habilitación del Bluetooth
+                Log.d("Permiso", "Permiso de Bluetooth concedido.")
+                val enableBtIntent = Intent(BluetoothAdapter.ACTION_REQUEST_ENABLE)
+                startActivityForResult(enableBtIntent, CODE_ON_BT)
+            } else {
+                Log.e("Permiso", "Permiso de Bluetooth denegado.")
+                // Permiso denegado, manejarlo adecuadamente
+            }
+        }
+    }
+
 
     private fun testBluetooth() {
         val bluetoothManager = getSystemService(requireContext(), BluetoothManager::class.java)
@@ -86,16 +108,21 @@ class FirstViewLinkFragment : Fragment() {
                     Manifest.permission.BLUETOOTH_CONNECT
                 ) != PackageManager.PERMISSION_GRANTED
             ) {
+                Log.d("Permiso", "Permiso de Bluetooth no concedido. Solicitando...")
                 ActivityCompat.requestPermissions(
                     requireActivity(),
                     arrayOf(Manifest.permission.BLUETOOTH_CONNECT),
-                    1
+                    CODE_PM_BT
                 )
                 return
+            }else{
+                Log.d("Permiso", "Permiso de Bluetooth concedido")
             }
+
+            // Solicitar habilitación de Bluetooth
             val enableBtIntent = Intent(BluetoothAdapter.ACTION_REQUEST_ENABLE)
-            startActivityForResult(enableBtIntent, 3)
-        } else{
+            startActivityForResult(enableBtIntent, CODE_ON_BT)
+        } else {
             connectToBluetooth()
         }
     }
