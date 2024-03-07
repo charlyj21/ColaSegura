@@ -2,24 +2,20 @@ package com.charlyj21.colasegura
 
 import android.app.Activity.RESULT_OK
 import android.bluetooth.BluetoothAdapter
-import android.bluetooth.BluetoothDevice
 import android.bluetooth.BluetoothManager
 import android.content.Intent
 import android.content.pm.PackageManager
-import android.os.Build
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
 import android.widget.Toast
-import androidx.annotation.RequiresApi
 import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat.getSystemService
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import android.Manifest
-import android.util.Log
 import androidx.core.content.ContextCompat
 
 
@@ -88,15 +84,12 @@ class FirstViewLinkFragment : Fragment() {
                     Manifest.permission.BLUETOOTH_CONNECT
                 ) != PackageManager.PERMISSION_GRANTED
             ) {
-                Log.d("Permiso", "Permiso de Bluetooth no concedido. Solicitando...")
                 ActivityCompat.requestPermissions(
                     requireActivity(),
                     arrayOf(Manifest.permission.BLUETOOTH_CONNECT),
                     CODE_PM_BT
                 )
                 return
-            }else{
-                Log.d("Permiso", "Permiso de Bluetooth concedido")
             }
 
             // Solicitar habilitación de Bluetooth
