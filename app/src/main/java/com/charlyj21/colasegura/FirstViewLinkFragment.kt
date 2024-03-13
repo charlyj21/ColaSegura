@@ -2,18 +2,15 @@ package com.charlyj21.colasegura
 
 import android.app.Activity.RESULT_OK
 import android.bluetooth.BluetoothAdapter
-import android.bluetooth.BluetoothDevice
 import android.bluetooth.BluetoothManager
 import android.content.Intent
 import android.content.pm.PackageManager
-import android.os.Build
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
 import android.widget.Toast
-import androidx.annotation.RequiresApi
 import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat.getSystemService
 import androidx.fragment.app.Fragment
@@ -24,6 +21,8 @@ import androidx.core.content.ContextCompat
 
 class FirstViewLinkFragment : Fragment() {
     private var permissionMissing: Boolean = false
+    private val CODE_ON_BT = 1
+    private val CODE_PM_BT = 3
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -44,7 +43,7 @@ class FirstViewLinkFragment : Fragment() {
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         super.onActivityResult(requestCode, resultCode, data)
 
-        if (requestCode == 1) { // Comprobar si es la solicitud de Bluetooth
+        if (requestCode == CODE_ON_BT) { // Comprobar si es la solicitud de Bluetooth
             if (resultCode == RESULT_OK) {
                 //test
                 connectToBluetooth()
@@ -65,17 +64,16 @@ class FirstViewLinkFragment : Fragment() {
             }
         }
 
-        if (requestCode == 3) { // Comprobar si es la solicitud de Bluetooth
+        if (requestCode == CODE_PM_BT) { // Comprobar si es la solicitud de Bluetooth
             if (resultCode == RESULT_OK) {
                 //test
                 connectToBluetooth()
             } else {
                 // Bluetooth no habilitado
-                Toast.makeText(requireContext(), "Error feo", Toast.LENGTH_SHORT).show()
+                Toast.makeText(requireContext(), "Permiso no habilitado", Toast.LENGTH_SHORT).show()
             }
         }
     }
-
 
     private fun testBluetooth() {
         val bluetoothManager = getSystemService(requireContext(), BluetoothManager::class.java)
@@ -89,14 +87,18 @@ class FirstViewLinkFragment : Fragment() {
                 ActivityCompat.requestPermissions(
                     requireActivity(),
                     arrayOf(Manifest.permission.BLUETOOTH_CONNECT),
-                    1
+                    CODE_PM_BT
                 )
                 return
             }
+
+            // Solicitar habilitación de Bluetooth
             val enableBtIntent = Intent(BluetoothAdapter.ACTION_REQUEST_ENABLE)
-            startActivityForResult(enableBtIntent, 3)
-        } else{
+            startActivityForResult(enableBtIntent, CODE_ON_BT)
+            return
+        } else {
             connectToBluetooth()
+            return
         }
     }
 
